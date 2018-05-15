@@ -1,0 +1,15 @@
+Package: breadbox
+Title: Generate Continuous Scales Referencing Objects and Landmarks
+Version: 0.0.0.9000
+Authors@R: person('Matthew Lincoln', email = 'matthew.d.lincoln@gmail.com', role = c('aut', 'cre'))
+Description: In the vein of "20 Questions", this package helps visualize 
+    difficult-to-grasp number like area, large distances, or even large 
+    timescales, by producing label sets that reference real things such as 
+    dates of historical events, heights of well-knoen buildings, or sizes of 
+    famous masterworks of art.
+License: MIT + file LICENSE
+Imports: 
+    scales
+ByteCompile: true
+Encoding: UTF-8
+LazyData: true
