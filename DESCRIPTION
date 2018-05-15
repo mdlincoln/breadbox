@@ -10,6 +10,8 @@ Description: In the vein of "20 Questions", this package helps visualize
 License: MIT + file LICENSE
 Imports: 
     scales
+Suggests: 
+    testthat
 ByteCompile: true
 Encoding: UTF-8
 LazyData: true

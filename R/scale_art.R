@@ -18,7 +18,3 @@ scale_art <- function(collections = "nga_highlights", breaks_f = scales::log_bre
     )
   }
 }
-
-#load_all()
-x <- c(54, 98, 1092, 10992, 991890)
-scale_art()(x)
