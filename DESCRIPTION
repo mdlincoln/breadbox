@@ -8,10 +8,12 @@ Description: In the vein of "20 Questions", this package helps visualize
     dates of historical events, heights of well-knoen buildings, or sizes of 
     famous masterworks of art.
 License: MIT + file LICENSE
-Imports: 
+Imports:
     scales
-Suggests: 
+Suggests:
     testthat
 ByteCompile: true
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/mdlincoln/breadbox
+BugReports: https://github.com/mdlincoln/breadbox/issues
