@@ -1,14 +1,19 @@
 context("scale_art")
 
+describe("art_breaks", {
+  it("returns breaks covering full range")
+})
+
 describe("scale_art", {
+  x <- c(2, 54, 98, 1092, 10992, 88282, 991890)
+  f <- scale_art()
+  res <- f(x)
+
   it("Will return a function", {
-    f <- scale_art()
     expect_is(f, "function")
   })
 
   it("Makes a function that produces a list of numeric breaks and character labels", {
-    x <- c(54, 98, 1092, 10992, 991890)
-    res <- f(x)
     expect_is(res, "list")
     expect_is(res[["breaks"]], "numeric")
     expect_is(res[["labels"]], "character")
@@ -18,5 +23,10 @@ describe("scale_art", {
 
   it("returns breaks and labels of equal size", {
     expect_length(res[["breaks"]], length(res[["labels"]]))
+  })
+
+  it("Handles presence of 0 with a warning, but no error", {
+    x0 <- c(0, 2, 100, 1002)
+    expect_warning(f(x0), "scale_art is only intended for values greater than 0.")
   })
 })

@@ -3,18 +3,33 @@ scale_art <- function(collections = "nga_highlights", breaks_f = scales::log_bre
   function(x) {
     if (max(x) > max(available_sets$area) + 0.1 * max(available_sets$area))
       warning("Data is well outside the range of the available labels. Plotting may look strange.")
+    closest_index <- ideal_indices(range(x), available_sets[["area"]])
 
-    ideal_breakpoints <- scales::cbreaks(range = range(x), breaks = scales::log_breaks())
-    closest_index <- purrr::map_int(ideal_breakpoints$breaks, function(b) {
-      diffs <- abs(available_sets$area - b)
-      which.min(diffs)
-    })
-    closest_area <- available_sets$area[closest_index]
-    closest_labels <- available_sets$label[closest_index]
     list(
       breaks = closest_area,
       labels = closest_labels,
       rmse = sqrt(mean((closest_area - ideal_breakpoints$breaks)^2))
     )
   }
+}
+
+to_art <- function(x) {
+
+}
+
+from_art <- function(x) as.numeric(x)
+
+art_trans <- function() {
+  trans_new("art")
+}
+
+art_breaks <- function(n = 3) {
+  function(x) {
+    closest_index <- ideal_indices(range(x), available_sets[["area"]], n, ...)
+    closest_area <- available_sets[["area"]][i]
+  }
+}
+
+f_art_labels <- function(i) {
+  closest_labels <- available_sets[["label"]][i]
 }
